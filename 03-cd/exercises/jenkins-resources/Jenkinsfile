@@ -18,7 +18,7 @@ pipeline {
             agent any
             steps {
                 echo 'Compiling...'
-                sh 'gradlew compileJava'
+                sh './gradlew compileJava'
             }
         }
     }
