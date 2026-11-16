@@ -13,5 +13,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Compile') {
+            agent any
+            steps {
+                echo 'Compiling...'
+                sh 'gradlew compileJava'
+            }
+        }
     }
 }
