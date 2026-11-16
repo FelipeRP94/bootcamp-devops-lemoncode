@@ -21,5 +21,14 @@ pipeline {
                 }
             }
         }
+
+        stage('Testing') {
+            steps {
+                echo 'Testing...'
+                dir('03-cd/exercises/jenkins-resources/calculator') {
+                    sh './gradlew test'
+                }
+            }
+        }
     }
 }
