@@ -1,9 +1,8 @@
 pipeline {
-    agent none
+    agent any
 
     stages {
         stage('Checkout code') {
-            agent any
             steps {
                 echo 'Checkout code...'
                 script {
@@ -15,7 +14,6 @@ pipeline {
         }
 
         stage('Compile') {
-            agent any
             steps {
                 echo 'Compiling...'
                 sh './gradlew compileJava'
