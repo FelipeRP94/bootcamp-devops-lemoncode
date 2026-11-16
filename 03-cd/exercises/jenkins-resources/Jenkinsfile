@@ -6,6 +6,11 @@ pipeline {
             agent any
             steps {
                 echo 'Checkout code...'
+                script {
+                    git branch: 'master',
+                        credentialsId: 'git',
+                        url: 'https://github.com/FelipeRP94/bootcamp-devops-lemoncode.git'
+                }
             }
         }
     }
