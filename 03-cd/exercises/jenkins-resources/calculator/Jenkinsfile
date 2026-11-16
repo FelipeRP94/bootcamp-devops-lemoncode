@@ -13,13 +13,13 @@ pipeline {
             }
         }
 
-        dir('03-cd/exercises/jenkins-resources/calculator') {
-            stage('Compile') {
-                steps {
-                    echo 'Compiling...'
+        stage('Compile') {
+            steps {
+                echo 'Compiling...'
+                dir('03-cd/exercises/jenkins-resources/calculator') {
                     sh './gradlew compileJava'
                 }
             }
-        } 
+        }
     }
 }
