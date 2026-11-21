@@ -1,0 +1,29 @@
+services:
+  backend:
+    build:
+      context: ./hangman-api
+      dockerfile: Dockerfile
+    container_name: hangman-api
+    networks:
+      - hangman-network
+    ports:
+      - "3001:3000"
+    restart: always
+
+  frontend:
+    depends_on:
+      - backend
+    build:
+      context: ./hangman-front
+      dockerfile: Dockerfile
+    container_name: hangman-front
+    networks:
+      - hangman-network
+    ports:
+      - "8080:8080"
+    restart: always
+    environment:
+      API_URL: http://localhost:3001
+
+networks:
+  hangman-network:
