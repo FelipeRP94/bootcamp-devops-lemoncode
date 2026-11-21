@@ -36,7 +36,7 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v7
         with:
-          working-directory: 03-cd/03-github-actions/.start-code/hangman-e2e
+          working-directory: 03-cd/03-github-actions/.start-code/hangman-e2e/e2e
 
       - name: Stop and remove services
         if: always()
