@@ -6,12 +6,12 @@ on:
       - "03-cd/03-github-actions/.start-code/**"
   push:
     branches:
-      - main
+      - master
     paths:
       - "03-cd/03-github-actions/.start-code/**"
   pull_request:
     branches:
-      - main
+      - master
     paths:
       - "03-cd/03-github-actions/.start-code/**"
 
